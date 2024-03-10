@@ -1,0 +1,86 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: roboto, sans-serif;
+}
+
+header {
+    background-color: #5f27cd;  /* cor de fundo do cabeçalho  */
+    padding: 16px 0;  /* espaçamento interno vai ser de 16 px no topo e na parte de baixo e 0 na lateral */
+    color: #fff;      /*cor da fonte */
+    display:flex;      /* para deixar o botão ao lado do título*/
+    border-bottom: 16px solid #341f97;   //*  borda ao lado do botão */
+    justify-content: center;       /*  centralizar tudo */
+    text-transform: uppercase;   /*  efeito caplook */
+    font-style: italic;             /*  italico */
+}
+
+header button {
+    margin-left: 16px;  /* para descolar o botão */
+}
+
+form {
+    background-color: #c8d6e5;
+    padding: 24px 0;
+    text-align: center;  /*  alinhar o texto */
+    display: none;       /*  para não exibir o formulário */
+}
+
+form h2 {
+    margin-bottom: 16px;  /*  margem inferior do botão */
+}
+
+input, button {
+padding: 8px;              /*  espaçamento interno */
+}
+
+button {
+    background-color: #009432;
+    border: none;             /*  tira a borda do botão */
+    cursor: pointer;          /* cria aquela mão no mouse que da a impressão de clicavel */
+    font-weight:bold;        /*  negrito */
+    text-transform:uppercase;
+    color:#fff;
+}
+
+#botao-cancelar {
+    background-color: red;
+}
+
+ul {
+    display: flex;   /* para que os elementos dentro o ul fiquem  um ao lado do outro*/
+    flex-wrap: wrap; /* para criar uma nova linha quando acabar o espaço na tela */  
+}
+
+ul li {
+    max-width: 25%;   
+    list-style: none;
+    position: relative; /* como temos o "position:absolute", para que o elemento na vaze no layout e fique concetrado no elemento pai */
+    max-height: 220px;
+    overflow-y: hidden;    /* para ocutar a parte da imagem que ultrapassar o eixo y */
+}
+
+ul li img {
+    width: 100%;
+}
+
+.overlay-imagem-link {                /* borda abaixo da imagem, onde fica o nme: ver em tamanho real */
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute; /* posicionar o elemento no canto inferior do li */
+    bottom:0; /*para ficar na extremidade*/
+    left: 0;
+    width: 100%; /* para ter 100% de largura */
+    opacity: 0;  /* remover a barra onde fica o link */
+    transition: all ease .5s;    /* transição para o aparecimento da barra do link quando passar o mouse */
+}
+
+.overlay-imagem-link a { /* aplicar uma cor diferenta o link */
+    color: #fff;
+    text-decoration: none; /* remover o underline */
+}
+
+ul li:hover .overlay-imagem-link {
+    opacity: 1;  /* Para quando passar o mouse aparecer a barra e o link da imagem */
+}
